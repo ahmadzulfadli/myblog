@@ -22,7 +22,8 @@
                             <small class="mr-3"><i class="fa fa-comments text-primary"></i> 15</small>
                         </div>
                         <p>{{model.keterangan}}</p>
-                        <a href="blog_detail/single.html" class="btn btn-primary px-4 mx-auto my-2">Lihat</a>
+                        <a href="{% url 'blogdetail' model.id_art %}"
+                            class="btn btn-primary px-4 mx-auto my-2">Lihat</a>
                     </div>
                 </div>
             </div>

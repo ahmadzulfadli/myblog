@@ -9,7 +9,8 @@ urlpatterns = [
     path('gallery/', views.GalleryView.as_view(), name='gallery'),
     path('contact/', views.ContactView.as_view(), name='contact'),
     path('blog/', views.BlogView.as_view(), name='blog'),
-    path('blogdetail/', views.BlogDetailView.as_view(), name='blogdetail'),
+    path('blogdetail/<str:id_art>/',
+         views.BlogDetailView.as_view(), name='blogdetail'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL,

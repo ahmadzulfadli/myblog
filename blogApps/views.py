@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views import View
-from blogApps.models import Artikel
+from blogApps.models import *
 
 # index view------------------------
 
@@ -72,8 +72,14 @@ class BlogView(View):
 
 class BlogDetailView(View):
     # method get--------------------------
-    def get(self, request):
-        return render(request, 'blog_detail/detail.html', {})
+    def get(self, request, id_art):
+        model = Artikel.objects.get(id_art=id_art)
+        modelKat = Kategori.objects.all()
+        context = {
+            'model': model,
+            'modelKat': modelKat,
+        }
+        return render(request, 'blog_detail/detail.html', context)
 
     # method post--------------------------
     def post(self, request):
