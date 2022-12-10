@@ -10,54 +10,23 @@
             <h1 class="mb-4">Artikel Terakhir</h1>
         </div>
         <div class="row pb-3">
+            {% for model in model %}
             <div class="col-lg-4 mb-4">
                 <div class="card border-0 shadow-sm mb-2">
-                    <img class="card-img-top mb-2" src="img/blog-1.jpg" alt="">
+                    <img class="card-img-top mb-2" src="../media/{{model.gambar}}" alt="" />
                     <div class="card-body bg-light text-center p-4">
-                        <h4 class="">Belajar Arduino Uno</h4>
+                        <h4 class="">{{model.judul}}</h4>
                         <div class="d-flex justify-content-center mb-3">
-                            <small class="mr-3"><i class="fa fa-user text-primary"></i> Fadli</small>
-                            <small class="mr-3"><i class="fa fa-folder text-primary"></i> Arduino</small>
+                            <small class="mr-3"><i class="fa fa-user text-primary"></i> {{model.penulis}}</small>
+                            <small class="mr-3"><i class="fa fa-folder text-primary"></i> {{model.kategori}}</small>
                             <small class="mr-3"><i class="fa fa-comments text-primary"></i> 15</small>
                         </div>
-                        <p>Sed kasd sea sed at elitr sed ipsum justo, sit nonumy diam eirmod, duo et sed sit eirmod kasd
-                            clita tempor dolor stet lorem. Tempor ipsum justo amet stet...</p>
+                        <p>{{model.keterangan}}</p>
                         <a href="blog_detail/single.html" class="btn btn-primary px-4 mx-auto my-2">Lihat</a>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 mb-4">
-                <div class="card border-0 shadow-sm mb-2">
-                    <img class="card-img-top mb-2" src="img/blog-1.jpg" alt="">
-                    <div class="card-body bg-light text-center p-4">
-                        <h4 class="">Belajar Arduino Uno</h4>
-                        <div class="d-flex justify-content-center mb-3">
-                            <small class="mr-3"><i class="fa fa-user text-primary"></i> Fadli</small>
-                            <small class="mr-3"><i class="fa fa-folder text-primary"></i> Arduino</small>
-                            <small class="mr-3"><i class="fa fa-comments text-primary"></i> 15</small>
-                        </div>
-                        <p>Sed kasd sea sed at elitr sed ipsum justo, sit nonumy diam eirmod, duo et sed sit eirmod kasd
-                            clita tempor dolor stet lorem. Tempor ipsum justo amet stet...</p>
-                        <a href="blog_detail/single.html" class="btn btn-primary px-4 mx-auto my-2">Lihat</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 mb-4">
-                <div class="card border-0 shadow-sm mb-2">
-                    <img class="card-img-top mb-2" src="img/blog-1.jpg" alt="">
-                    <div class="card-body bg-light text-center p-4">
-                        <h4 class="">Belajar Arduino Uno</h4>
-                        <div class="d-flex justify-content-center mb-3">
-                            <small class="mr-3"><i class="fa fa-user text-primary"></i> Fadli</small>
-                            <small class="mr-3"><i class="fa fa-folder text-primary"></i> Arduino</small>
-                            <small class="mr-3"><i class="fa fa-comments text-primary"></i> 15</small>
-                        </div>
-                        <p>Sed kasd sea sed at elitr sed ipsum justo, sit nonumy diam eirmod, duo et sed sit eirmod kasd
-                            clita tempor dolor stet lorem. Tempor ipsum justo amet stet...</p>
-                        <a href="blog_detail/single.html" class="btn btn-primary px-4 mx-auto my-2">Lihat</a>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
 
             <div class="col-md-12 mb-4">
                 <nav aria-label="Page navigation">
