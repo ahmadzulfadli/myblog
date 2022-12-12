@@ -21,36 +21,13 @@
             </div>
         </div>
         <div class="row portfolio-container">
+            {% for model in model %}
             <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
                 <div class="position-relative overflow-hidden mb-2">
-                    <img class="img-fluid h-100 w-100" src="img/portofolio5.jpeg" alt="">
+                    <img class="img-fluid h-100 w-100" src="../media/{{model.gallery}}" alt="">
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
-                <div class="position-relative overflow-hidden mb-2">
-                    <img class="img-fluid w-100" src="img/portofolio4.jpeg" alt="">
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4 portfolio-item third">
-                <div class="position-relative overflow-hidden mb-2">
-                    <img class="img-fluid w-100" src="img/portofolio3.jpeg" alt="">
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
-                <div class="position-relative overflow-hidden mb-2">
-                    <img class="img-fluid w-100" src="img/portofolio1.jpeg" alt="">
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
-                <div class="position-relative overflow-hidden mb-2">
-                    <img class="img-fluid w-100" src="img/portofolio2.jpeg" alt="">
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4 portfolio-item third">
-                <div class="position-relative overflow-hidden mb-2">
-                    <img class="img-fluid w-100" src="img/portofolio6.jpeg" alt="">
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </div>

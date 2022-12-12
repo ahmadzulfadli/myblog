@@ -8,7 +8,8 @@ from blogApps.models import *
 class IndexView(View):
     # method get--------------------------
     def get(self, request):
-        return render(request, 'index.html', {})
+        context = {}
+        return render(request, 'index.html', context)
 
     # method post--------------------------
     def post(self, request):
@@ -32,7 +33,11 @@ class AboutView(View):
 class GalleryView(View):
     # method get--------------------------
     def get(self, request):
-        return render(request, 'gallery.html', {})
+        model = Gallery.objects.all()
+        context = {
+            'model': model,
+        }
+        return render(request, 'gallery.html', context)
 
     # method post--------------------------
     def post(self, request):

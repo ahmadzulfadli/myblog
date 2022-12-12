@@ -4,13 +4,13 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Ahmad Zulfadli</title>
+    <title>RESTEC</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
 
     <!-- Favicon -->
-    <link href="{% static 'img/favicon.ico '%}" rel="icon">
+    <link href="{% static 'img/RESTEC100PX.png'%}" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -35,8 +35,8 @@
     <div class="container-fluid bg-light position-relative shadow">
         <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5">
             <a href="" class="navbar-brand font-weight-bold text-secondary" style="font-size: 50px;">
-                <i class="flaticon-043-teddy-bear"></i>
-                <span class="text-primary">Ahmad Zulfadli</span>
+                <i><img width="70px" height="70px" src="{% static 'img/RESTEC100PX.png' %}" alt=""></i>
+                <span class="text-primary">RESTEC</span>
             </a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
@@ -55,7 +55,7 @@
                     <a href="{% url 'about' %}" class=" nav-item nav-link">About</a>
                     {% endif %}
 
-                    {% if request.resolver_match.url_name == 'blog' %}
+                    {% if request.resolver_match.url_name == 'blog' or request.resolver_match.url_name == 'blogdetail'%}
                     <a href="{% url 'blog' %}" class="nav-item nav-link active">Blog</a>
                     {% else %}
                     <a href="{% url 'blog' %}" class="nav-item nav-link">Blog</a>
@@ -91,11 +91,11 @@
             <div class="col-lg-3 col-md-6 mb-5">
                 <a href="" class="navbar-brand font-weight-bold text-primary m-0 mb-4 p-0"
                     style="font-size: 40px; line-height: 40px;">
-                    <i class="flaticon-043-teddy-bear"></i>
-                    <span class="text-white" style="font-size:33px;">Ahmad Zulfadli</span>
+                    <i><img width="70px" height="70px" src="{% static 'img/RESTEC100PX.png' %}" alt=""></i>
+                    <span class="text-white" style="font-size:33px;">RESTEC</span>
                 </a>
-                <p>Labore dolor amet ipsum ea, erat sit ipsum duo eos. Volup amet ea dolor et magna dolor, elitr rebum
-                    duo est sed diam elitr. Stet elitr stet diam duo eos rebum ipsum diam ipsum elitr.</p>
+                <p>Research Electrikal Technology (RESTEC) adalah study club yang dinaungi oleh Himpunan Mahasiswa
+                    Teknik Elektro</p>
                 <div class="d-flex justify-content-start mt-4">
                     <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
                         style="width: 38px; height: 38px;" href="#"><i class="fab fa-twitter"></i></a>
@@ -113,14 +113,14 @@
                     <h4 class="fa fa-map-marker-alt text-primary"></h4>
                     <div class="pl-3">
                         <h5 class="text-white">Alamat</h5>
-                        <p>G. Family Jl. Garuda Sakti KM-2</p>
+                        <p>Laboratorium FST UIN SUSKA Riau</p>
                     </div>
                 </div>
                 <div class="d-flex">
                     <h4 class="fa fa-envelope text-primary"></h4>
                     <div class="pl-3">
                         <h5 class="text-white">Email</h5>
-                        <p>11950511598@students.uin-suska.ac.id</p>
+                        <p>restec.id@gmail.com</p>
                     </div>
                 </div>
                 <div class="d-flex">
@@ -134,15 +134,16 @@
             <div class="col-lg-3 col-md-6 mb-5">
                 <h3 class="text-primary mb-4">Akses Link</h3>
                 <div class="d-flex flex-column justify-content-start">
-                    <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Home</a>
-                    <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>About</a>
-                    <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Gallery</a>
-                    <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Blog</a>
-                    <a class="text-white" href="#"><i class="fa fa-angle-right mr-2"></i>Contact</a>
+                    <a class="text-white mb-2" href="{% url 'index' %}"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                    <a class="text-white mb-2" href="{% url 'about' %}"><i class="fa fa-angle-right mr-2"></i>About</a>
+                    <a class="text-white mb-2" href="{% url 'gallery' %}"><i
+                            class="fa fa-angle-right mr-2"></i>Gallery</a>
+                    <a class="text-white mb-2" href="{% url 'blog' %}"><i class="fa fa-angle-right mr-2"></i>Blog</a>
+                    <a class="text-white" href="{% url 'contact' %}"><i class="fa fa-angle-right mr-2"></i>Contact</a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
-                <h3 class="text-primary mb-4">Tambah Teman</h3>
+                <h3 class="text-primary mb-4">Komentar</h3>
                 <form action="">
                     <div class="form-group">
                         <input type="text" class="form-control border-0 py-4" placeholder="Nama" required="required" />
@@ -150,6 +151,9 @@
                     <div class="form-group">
                         <input type="email" class="form-control border-0 py-4" placeholder="Email"
                             required="required" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control border-0 py-4" placeholder="Text" required="required" />
                     </div>
                     <div>
                         <button class="btn btn-primary btn-block border-0 py-3" type="submit">Kirim</button>
@@ -159,7 +163,7 @@
         </div>
         <div class="container-fluid pt-5" style="border-top: 1px solid rgba(23, 162, 184, .2);;">
             <p class="m-0 text-center text-white">
-                &copy; <a class="text-primary font-weight-bold" href="#">2022. ahmadzulfadli.my.id</a>. All Rights
+                &copy; <a class="text-primary font-weight-bold" href="#">2022. Resrec.id</a>. All Rights
                 Reserved.
             </p>
         </div>
